@@ -2,9 +2,13 @@
 % Please edit documentation in R/bgmfile.r
 \name{bgmfile}
 \alias{bgmfile}
+\alias{bgmfile}
+\alias{read_bgm}
 \title{Read BGM}
 \usage{
 bgmfile(x, ...)
+
+read_bgm(x, ...)
 }
 \arguments{
 \item{x}{path to a bgm file}
@@ -29,4 +33,3 @@ bgm
 See helper functions to convert the bgm tables to `Spatial` objects, \code{\link{boxSpatial}}, 
 \code{\link{faceSpatial}}, \code{\link{nodeSpatial}}, \code{\link{boundarySpatial}}, \code{\link{pointSpatial}}
 }
-
