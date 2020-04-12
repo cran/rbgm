@@ -1,8 +1,6 @@
-## ----fig.width=9, fig.height = 9-----------------------------------------
+## ----fig.width=9, fig.height = 9----------------------------------------------
 library(rbgm)
 library(bgmfiles)
-
-library(rgdal)
 
 ## turn +proj into line separated text
 breakproj <- function(x) {
@@ -14,7 +12,6 @@ for (i in seq_along(files)) {
   boxes <- boxSpatial(bgm)
   plot(boxes, col = ifelse(boxes$boundary, "#88888880", sample(rainbow(nrow(boxes), alpha = 0.5))))
   op <- par(xpd = NA)
-  llgridlines(boxes)
   par(op)
   title(basename(files[i]), cex = 0.8)
   mtext(breakproj(proj4string(boxes)), cex = 0.75, side = 2, las = 1, adj = 0, line = 2, at = par("usr")[3], xpd = NA)
@@ -23,7 +20,7 @@ for (i in seq_along(files)) {
 
 
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  library(rbgm)
 #  library(bgmfiles)
 #  library(mapview)
@@ -41,22 +38,4 @@ for (i in seq_along(files)) {
 #  ## view the mapview
 #  mp
 #  
-
-## ----eval=FALSE, include = FALSE-----------------------------------------
-#  Convert each to XYZ on the globe and plot.
-#  
-#  #devtools::install_github("mdsumner/gris", ref = "cran-sprint")
-#  library(gris)
-#  for (i in seq_along(files)) {
-#    bgm <- bgmfile(files[i])
-#    boxes <- boxSpatial(bgm)
-#    bll <- if (isLonLat(boxes)) boxes else spTransform(boxes, "+proj=longlat +ellps=WGS84")
-#   g <- gris(bll)
-#   gt <- triangulate(g)
-#   plot3d(gt, add = i > 1)
-#  }
-#  
-#  plot3d(triangulate(gris(wrld_simpl)), add = TRUE, col = "black")
-#  rgl::light3d(specular = "aliceblue", viewpoint.rel = FALSE)
-#  rgl::bg3d("black")
 

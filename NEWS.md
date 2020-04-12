@@ -1,3 +1,16 @@
+# rbgm 0.1.0
+
+* rbgm has growed up a bit, cut a lot of ties from the anti-mesh brigade, so we celebrate with a 0.1.0 release.
+ 
+* spdplyr and rgeos requirement removed. 
+
+* New functions `box_sp()`, `boundary_sp()`, `node_sp()`, `point_sp()`,
+`face_sp`, `box_sf()`, `boundary_sf()`, `node_sf()`, `point_sf`. The `_sp`
+versions are simply aliases of `boxSpatial(), boundarySpatial(), nodeSpatial(),
+and pointSpatial()` - but with new names to be consistent with the sf versions.
+ 
+* rbgm now imports sfheaders. 
+
 # rbgm 0.0.5
 
 * Included `rgeos` and `spdplyr` in Suggests, thanks to CRAN. 
@@ -14,7 +27,9 @@
 
 * cleaned up for CRAN
 
-* fixed a gnarly bug due to lexicographic sorting on a list! Lines from faceSpatial were coming out in the sorted order of "face0", "face1", "face10", "face30" etc.
+* fixed a gnarly bug due to lexicographic sorting on a list! Lines from
+faceSpatial were coming out in the sorted order of "face0", "face1", "face10",
+"face30" etc.
 
 * renamed "leftbox" and "rightbox" to "left" and "right"
 
