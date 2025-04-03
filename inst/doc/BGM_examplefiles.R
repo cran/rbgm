@@ -20,22 +20,22 @@ for (i in seq_along(files)) {
 
 
 
-## ---- eval = FALSE------------------------------------------------------------
-#  library(rbgm)
-#  library(bgmfiles)
-#  library(mapview)
-#  
-#  
-#  mp <- mapview()  ## empty map view
-#  
-#  fs <- bgmfiles::bgmfiles()  ## paths of all files collected
-#  cols <- rainbow(length(fs), alpha = 0.2)
-#  ## read in all boxes, convert to SpatialPolygonsDataFrame, and add to the map view
-#  for (i in seq_along(fs)) {
-#    mp <- mp + mapview(boxSpatial(bgmfile(fs[i])), color = cols[i], alpha = 0.3, layer.name = basename(fs[i]))
-#  }
-#  
-#  ## view the mapview
-#  mp
-#  
+## ----eval = FALSE-------------------------------------------------------------
+# library(rbgm)
+# library(bgmfiles)
+# library(mapview)
+# 
+# 
+# mp <- mapview()  ## empty map view
+# 
+# fs <- bgmfiles::bgmfiles()  ## paths of all files collected
+# cols <- rainbow(length(fs), alpha = 0.2)
+# ## read in all boxes, convert to SpatialPolygonsDataFrame, and add to the map view
+# for (i in seq_along(fs)) {
+#   mp <- mp + mapview(boxSpatial(bgmfile(fs[i])), color = cols[i], alpha = 0.3, layer.name = basename(fs[i]))
+# }
+# 
+# ## view the mapview
+# mp
+# 
 
